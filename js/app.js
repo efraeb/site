@@ -455,8 +455,17 @@ function renderDesignWork(category) {
 }
 
 function openLightbox(work) {
+    console.log('Opening lightbox for:', work);
     const lightbox = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');
+
+    console.log('Lightbox element:', lightbox);
+    console.log('Image element:', img);
+
+    if (!lightbox || !img) {
+        console.error('Lightbox elements not found');
+        return;
+    }
 
     img.src = work.image;
     img.alt = work.title || 'Design work';
@@ -464,6 +473,8 @@ function openLightbox(work) {
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
     document.body.style.overflow = 'hidden';
+
+    console.log('Lightbox opened');
 }
 
 function closeLightbox() {
