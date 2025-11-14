@@ -250,7 +250,7 @@ const sections = {
         </div>
 
         <!-- Masonry Grid -->
-        <div id="design-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div id="design-grid" class="columns-2 md:columns-3 gap-4 space-y-4">
             <!-- Images will be loaded here by JavaScript -->
         </div>
 
@@ -392,7 +392,7 @@ function initDesignWork() {
 
     // Hide empty state
     document.getElementById('empty-state').style.display = 'none';
-    document.getElementById('design-grid').style.display = 'grid';
+    document.getElementById('design-grid').style.display = 'block';
 
     // Init category filters
     initCategoryFilters();
@@ -432,11 +432,11 @@ function renderDesignWork(category) {
     // Render each work
     filtered.forEach(work => {
         const card = document.createElement('div');
-        card.className = 'group relative overflow-hidden rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer';
+        card.className = 'group relative overflow-hidden rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer mb-4 break-inside-avoid';
         card.onclick = () => openLightbox(work);
 
         card.innerHTML = `
-            <img src="${work.image}" alt="${work.title || 'Design work'}" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22%3EImage not found%3C/text%3E%3C/svg%3E'">
+            <img src="${work.image}" alt="${work.title || 'Design work'}" class="w-full h-auto block" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22%3EImage not found%3C/text%3E%3C/svg%3E'">
         `;
 
         grid.appendChild(card);
