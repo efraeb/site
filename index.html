@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>efra - portfolio</title>
+    <title>Efraim Barriuso - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,18 +28,21 @@
         <header class="mb-12 pb-6 border-b border-white/10 fade-in">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-2xl font-medium mb-1 tracking-tight">efra</h1>
-                    <p class="text-sm text-gray-500 font-light">creative developer</p>
+                    <h1 class="text-2xl font-medium mb-1 tracking-tight">Efraim Barriuso</h1>
+                    <p class="text-sm text-gray-500 font-light">Product & Ops</p>
                 </div>
                 <nav class="flex items-center gap-6">
                     <a href="https://github.com/efraeb" target="_blank" class="text-sm text-gray-500 hover:text-white transition-colors">
                         GitHub
                     </a>
-                    <a href="mailto:contact@efra.com" class="text-sm text-gray-500 hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/efraim-barriuso/" target="_blank" class="text-sm text-gray-500 hover:text-white transition-colors">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:0xefra@gmail.com" class="text-sm text-gray-500 hover:text-white transition-colors">
                         Email
                     </a>
                     <a href="resume.pdf" download class="text-sm px-4 py-2 border border-white/20 rounded-md hover:bg-white hover:text-black transition-all">
-                        Resume
+                        Download Resume
                     </a>
                 </nav>
             </div>
@@ -49,54 +52,31 @@
         <main class="flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
             <!-- Sidebar -->
             <nav class="border-r border-white/10 pr-8 fade-in">
-                <div class="sticky top-8">
-                    <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-6">Projects</h2>
-                    <ul id="projects" class="space-y-1">
-                        <!-- Projects loaded here -->
-                    </ul>
+                <div class="sticky top-8 space-y-8">
+                    <!-- Navigation Sections -->
+                    <div>
+                        <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-3">Navigation</h2>
+                        <ul class="space-y-1">
+                            <li><button data-section="about" class="nav-btn active">About</button></li>
+                            <li><button data-section="experience" class="nav-btn">Experience</button></li>
+                            <li><button data-section="skills" class="nav-btn">Skills</button></li>
+                        </ul>
+                    </div>
+
+                    <!-- Projects -->
+                    <div>
+                        <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-3">Projects</h2>
+                        <ul id="projects" class="space-y-1">
+                            <!-- Projects loaded here -->
+                        </ul>
+                    </div>
                 </div>
             </nav>
 
             <!-- Content -->
             <section class="fade-in">
                 <div id="content" class="max-w-3xl">
-                    <!-- About Section (default) -->
-                    <div id="about-section">
-                        <h1 class="text-4xl font-semibold mb-4 tracking-tight">
-                            Hi, I'm Efra
-                        </h1>
-                        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                            A creative developer focused on building clean, functional, and beautiful web experiences.
-                            I enjoy working at the intersection of design and code.
-                        </p>
-
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">What I Do</h3>
-                                <ul class="space-y-2 text-gray-400">
-                                    <li class="flex items-start">
-                                        <span class="text-white mr-2">→</span>
-                                        <span>Full-stack web development</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="text-white mr-2">→</span>
-                                        <span>UI/UX design & prototyping</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="text-white mr-2">→</span>
-                                        <span>Design systems & component libraries</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Selected Work</h3>
-                                <p class="text-gray-400">
-                                    Select a project from the sidebar to learn more about my work.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Content loaded dynamically -->
                 </div>
             </section>
         </main>
@@ -104,11 +84,11 @@
         <!-- Footer -->
         <footer class="mt-20 pt-6 border-t border-white/10 fade-in">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                <p>© 2025 efra - built with markdown & vanilla js</p>
+                <p>© 2025 Efraim Barriuso</p>
                 <div class="flex gap-6">
                     <a href="https://github.com/efraeb" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-                    <a href="https://twitter.com/efra" target="_blank" class="hover:text-white transition-colors">Twitter</a>
-                    <a href="mailto:contact@efra.com" class="hover:text-white transition-colors">Email</a>
+                    <a href="https://www.linkedin.com/in/efraim-barriuso/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:0xefra@gmail.com" class="hover:text-white transition-colors">Email</a>
                 </div>
             </div>
         </footer>
