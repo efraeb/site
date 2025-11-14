@@ -241,6 +241,9 @@ const sections = {
             <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="ui-design">
                 UI Design
             </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="social-media">
+                Social Media
+            </button>
             <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="misc">
                 Misc
             </button>
@@ -269,10 +272,6 @@ const sections = {
         <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-6" onclick="closeLightbox()">
             <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-400 transition-colors">&times;</button>
             <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
-            <div id="lightbox-info" class="absolute bottom-6 left-6 text-white">
-                <h3 id="lightbox-title" class="text-xl font-medium"></h3>
-                <p id="lightbox-desc" class="text-gray-400 text-sm mt-1"></p>
-            </div>
         </div>
     `
 };
@@ -437,11 +436,7 @@ function renderDesignWork(category) {
         card.onclick = () => openLightbox(work);
 
         card.innerHTML = `
-            <img src="${work.image}" alt="${work.title}" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22%3EImage not found%3C/text%3E%3C/svg%3E'">
-            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-                <p class="text-white font-medium">${work.title}</p>
-                <p class="text-gray-400 text-sm mt-1">${work.year}</p>
-            </div>
+            <img src="${work.image}" alt="${work.title || 'Design work'}" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22%3EImage not found%3C/text%3E%3C/svg%3E'">
         `;
 
         grid.appendChild(card);
@@ -451,13 +446,9 @@ function renderDesignWork(category) {
 function openLightbox(work) {
     const lightbox = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');
-    const title = document.getElementById('lightbox-title');
-    const desc = document.getElementById('lightbox-desc');
 
     img.src = work.image;
-    img.alt = work.title;
-    title.textContent = work.title;
-    desc.textContent = work.description || work.year;
+    img.alt = work.title || 'Design work';
 
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
