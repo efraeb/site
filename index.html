@@ -1,39 +1,109 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Efra</title>
+    <title>efra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>efra</h1>
-            <p class="subtitle">portfolio</p>
-        </header>
+<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
 
-        <main>
-            <nav class="project-list">
-                <h2>Projects</h2>
-                <ul id="projects">
-                    <!-- Projects will be loaded dynamically -->
-                </ul>
-            </nav>
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed w-4 h-4 border border-white/30 rounded-full pointer-events-none z-50 transition-all duration-200 ease-out hidden md:block"></div>
+    <div id="cursor-dot" class="fixed w-1 h-1 bg-white rounded-full pointer-events-none z-50 hidden md:block"></div>
 
-            <section class="project-content">
-                <div id="content">
-                    <div class="welcome">
-                        <p>Select a project to view details</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
+        </div>
 
-        <footer>
-            <p>Built with markdown & vanilla js</p>
-        </footer>
+        <div class="text-center relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-7xl md:text-9xl font-light mb-6 tracking-tighter opacity-0 animate-fade-in" style="animation-delay: 0.2s">
+                efra
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 mb-12 opacity-0 animate-fade-in" style="animation-delay: 0.4s">
+                creative developer
+            </p>
+            <div class="opacity-0 animate-fade-in" style="animation-delay: 0.6s">
+                <a href="#projects" class="inline-block text-sm border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 group">
+                    view work
+                    <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-10 animate-float">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-sm uppercase tracking-widest text-gray-600 mb-20 fade-in-section">Selected Work</h2>
+
+            <div id="projects-container" class="space-y-32">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="min-h-screen flex items-center justify-center px-6 py-20">
+            <div class="max-w-4xl w-full relative">
+                <button id="close-modal" class="absolute top-0 right-0 text-gray-500 hover:text-white transition-colors p-2 text-2xl">
+                    ×
+                </button>
+                <div id="modal-content" class="prose-invert max-w-none"></div>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm text-gray-600">© 2025 efra</p>
+            <div class="flex gap-8 text-sm">
+                <a href="https://github.com/efraeb" target="_blank" class="text-gray-600 hover:text-white transition-colors">GitHub</a>
+                <a href="mailto:contact@efra.com" class="text-gray-600 hover:text-white transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/app.js"></script>
