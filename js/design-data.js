@@ -37,6 +37,7 @@ const categories = {
     posters: "Posters",
     artwork: "Artwork",
     "ui-design": "UI Design",
+    "social-media": "Social Media",
     misc: "Miscellaneous"
 };
 

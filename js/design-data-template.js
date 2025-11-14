@@ -42,9 +42,19 @@ const designWork = [
         description: "Dashboard interface for blockchain operators"
     },
 
-    // === MISC ===
+    // === SOCIAL MEDIA ===
     {
         id: 5,
+        title: "Instagram Post",
+        category: "social-media",
+        image: "design/social-media/post-01.jpg",
+        year: "2024",
+        description: "Social media content design"
+    },
+
+    // === MISC ===
+    {
+        id: 6,
         title: "Creative Project",
         category: "misc",
         image: "design/misc/project-name.jpg",
@@ -62,6 +72,7 @@ const categories = {
     posters: "Posters",
     artwork: "Artwork",
     "ui-design": "UI Design",
+    "social-media": "Social Media",
     misc: "Miscellaneous"
 };
 

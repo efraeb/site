@@ -34,6 +34,7 @@ Now manually move images from `design/misc/` into proper categories:
 - `design/posters/` - Event posters, promo materials
 - `design/brand-identity/` - Logos, brand systems, rebrands
 - `design/ui-design/` - Dashboard designs, interfaces
+- `design/social-media/` - Social media content, posts, graphics
 
 **Step 4:** Update `js/design-data.js`
 See template in `js/design-data-template.js` for examples.
@@ -42,7 +43,7 @@ For each image, add an entry like:
 {
     id: 1,
     title: "Project Name",
-    category: "brand-identity", // or: posters, artwork, ui-design, misc
+    category: "brand-identity", // or: posters, artwork, ui-design, social-media, misc
     image: "design/brand-identity/image-name.jpg",
     year: "2024",
     description: "Brief description"
@@ -88,6 +89,7 @@ Before committing, compress images to reduce file size:
 - **posters**: Event posters, promotional materials, flyers
 - **artwork**: Illustrations, digital art, creative visuals
 - **ui-design**: Dashboard mockups, app interfaces, web designs
+- **social-media**: Social media posts, Instagram/Twitter graphics, content design
 - **misc**: Everything else that doesn't fit above
 
 ---
