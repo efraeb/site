@@ -1,14 +1,6 @@
-# Ignore all images for now
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.webp
-*.svg
-
-# But keep the folder structure
+# Keep folder structure
 !.gitignore
 !README.md
 
-# When you're ready to commit your images, remove the patterns above
-# and commit specific images
+# Images are now tracked in git
+# Commit your design work images to make them visible on the site
