@@ -49,24 +49,26 @@ body::-webkit-scrollbar-thumb:hover {
     width: 100%;
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
+    font-weight: 400;
     cursor: pointer;
     padding: 0.5rem 0.75rem;
     text-align: left;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    letter-spacing: -0.01em;
 }
 
 #projects button:hover {
     background-color: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     transform: translateX(2px);
 }
 
 #projects button.active {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
 }
 
@@ -84,42 +86,46 @@ body::-webkit-scrollbar-thumb:hover {
     }
 }
 
-/* Markdown styles */
+/* Markdown styles - Vercel inspired */
 #content h1 {
     font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    letter-spacing: -0.03em;
     color: white;
 }
 
 #content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 600;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 #content h3 {
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.25rem;
+    font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
-    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 #content p {
     margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
+    font-weight: 400;
 }
 
 #content ul,
 #content ol {
     margin-bottom: 1.5rem;
     padding-left: 2rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 #content li {
@@ -128,10 +134,10 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #content a {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: border-color 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color 0.15s ease;
 }
 
 #content a:hover {
@@ -139,20 +145,22 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #content code {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875em;
     color: rgba(255, 255, 255, 0.9);
 }
 
 #content pre {
-    background-color: rgba(255, 255, 255, 0.05);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background-color: rgba(255, 255, 255, 0.04);
     padding: 1.5rem;
-    border-radius: 6px;
+    border-radius: 8px;
     overflow-x: auto;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #content pre code {
@@ -164,7 +172,7 @@ body::-webkit-scrollbar-thumb:hover {
     border-left: 2px solid rgba(255, 255, 255, 0.2);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.55);
     font-style: italic;
 }
 
@@ -177,18 +185,29 @@ body::-webkit-scrollbar-thumb:hover {
 #content img {
     max-width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 8px;
     margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Strong/Bold text */
+#content strong {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Links hover effect */
 a {
-    transition: color 0.2s ease;
+    transition: color 0.15s ease;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     #content h1 {
         font-size: 2rem;
+    }
+
+    #content h2 {
+        font-size: 1.5rem;
     }
 }

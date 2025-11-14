@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>efra - portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'monospace'],
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
                     }
                 }
             }
@@ -18,7 +22,7 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black text-white font-mono antialiased">
+<body class="bg-black text-white font-sans antialiased">
 
     <!-- Custom Cursor -->
     <div id="cursor" class="fixed w-3 h-3 border border-white/20 rounded-full pointer-events-none z-50 transition-all duration-150 ease-out hidden md:block"></div>
@@ -26,15 +30,15 @@
     <div class="container max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col">
         <!-- Header -->
         <header class="mb-12 pb-6 border-b border-white/10 fade-in">
-            <h1 class="text-2xl font-light mb-1">efra</h1>
-            <p class="text-sm text-gray-600">portfolio</p>
+            <h1 class="text-2xl font-medium mb-1 tracking-tight">efra</h1>
+            <p class="text-sm text-gray-500 font-light">portfolio</p>
         </header>
 
         <!-- Main Layout -->
         <main class="flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
             <!-- Sidebar -->
             <nav class="border-r border-white/10 pr-8 fade-in">
-                <h2 class="text-xs uppercase tracking-wider text-gray-600 mb-6">Projects</h2>
+                <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-6">Projects</h2>
                 <ul id="projects" class="space-y-1">
                     <!-- Projects loaded here -->
                 </ul>
@@ -43,7 +47,7 @@
             <!-- Content -->
             <section class="fade-in">
                 <div id="content" class="max-w-3xl">
-                    <div class="text-gray-600 py-20 text-center">
+                    <div class="text-gray-500 py-20 text-center font-light">
                         Select a project to view details
                     </div>
                 </div>
@@ -52,7 +56,7 @@
 
         <!-- Footer -->
         <footer class="mt-20 pt-6 border-t border-white/10 text-center fade-in">
-            <p class="text-xs text-gray-600">built with markdown & vanilla js</p>
+            <p class="text-xs text-gray-500 font-light">built with markdown & vanilla js</p>
         </footer>
     </div>
 
