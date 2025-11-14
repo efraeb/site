@@ -18,6 +18,7 @@ Your imgur album: https://imgur.com/a/cguulXy
    ├── posters/          # Event posters, promotional materials
    ├── brand-identity/   # Logos, brand systems, rebrands
    ├── ui-design/        # Dashboard designs, interfaces
+   ├── social-media/     # Social media content, posts, graphics
    └── misc/             # Everything else
    ```
 
