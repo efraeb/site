@@ -8,60 +8,42 @@ const projects = [
 // Section content
 const sections = {
     about: `
-        <h1 class="text-4xl font-semibold mb-4 tracking-tight">Hi, I'm Efraim</h1>
+        <h1 class="text-4xl font-semibold mb-4 tracking-tight">hey, i'm efra</h1>
         <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-            Product & Ops at <a href="https://vista.wtf" target="_blank" class="text-white border-b border-white/30 hover:border-white">Vista</a>,
-            a data & engineering group helping organizations make better decisions with blockchain analytics and protocol research.
+            currently doing product & ops at <a href="https://vista.wtf" target="_blank" class="text-white border-b border-white/30 hover:border-white">vista</a>.
+            we help orgs make better decisions with data systems, blockchain analytics, and protocol research.
         </p>
 
         <div class="space-y-6">
             <div>
-                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">What I Do</h3>
+                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">what i do</h3>
                 <p class="text-gray-400 leading-relaxed mb-4">
-                    I bridge creative vision and execution across design, analytics, and product. My work spans from
-                    blockchain analytics and SQL queries to brand identity and dashboard development.
+                    i work at the intersection of product, design, and data. mostly blockchain analytics (SQL, Dune),
+                    building dashboards (Next.js), brand work, and making complex protocol stuff understandable.
                 </p>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="flex items-start">
-                        <span class="text-white mr-2">→</span>
-                        <span>Product strategy & protocol research</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-white mr-2">→</span>
-                        <span>Blockchain analytics with SQL/DuneSQL</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-white mr-2">→</span>
-                        <span>Full-stack development (Next.js, React)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-white mr-2">→</span>
-                        <span>Brand development & visual design</span>
-                    </li>
-                </ul>
             </div>
 
             <div>
-                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Background</h3>
+                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">background</h3>
                 <p class="text-gray-400 leading-relaxed">
-                    Previously Content & Communications at <span class="text-white">Llama</span> (acquired by River Protocol),
-                    serving tier-1 DAOs like Nouns, AAVE, and dYdX. Co-founder of
-                    <a href="https://ethereumdom.org" target="_blank" class="text-white border-b border-white/30 hover:border-white">Ethereum Dominicana</a>,
-                    kickstarting the Dominican Republic's Web3 community.
+                    before vista, i was at <span class="text-white">llama</span> (acquired by river protocol) doing content & comms
+                    for DAOs like nouns, aave, and dydx. also co-founded
+                    <a href="https://ethereumdom.org" target="_blank" class="text-white border-b border-white/30 hover:border-white">ethereum dominicana</a>
+                    to get web3 going in the DR.
                 </p>
             </div>
 
             <div>
-                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Location & Languages</h3>
+                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">misc</h3>
                 <p class="text-gray-400">
-                    Based in Santo Domingo, Dominican Republic. Bilingual (Spanish/English).
+                    based in santo domingo 🇩🇴 • bilingual (spanish/english) • into design systems, music production, and philosophy
                 </p>
             </div>
         </div>
     `,
 
     experience: `
-        <h1 class="text-4xl font-semibold mb-8 tracking-tight">Experience</h1>
+        <h1 class="text-4xl font-semibold mb-8 tracking-tight">experience</h1>
 
         <div class="space-y-10">
             <!-- Vista -->
@@ -156,7 +138,7 @@ const sections = {
     `,
 
     skills: `
-        <h1 class="text-4xl font-semibold mb-8 tracking-tight">Skills</h1>
+        <h1 class="text-4xl font-semibold mb-8 tracking-tight">skills</h1>
 
         <div class="space-y-8">
             <div>
