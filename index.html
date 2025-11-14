@@ -26,33 +26,91 @@
     <div class="container max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col">
         <!-- Header -->
         <header class="mb-12 pb-6 border-b border-white/10 fade-in">
-            <h1 class="text-2xl font-medium mb-1 tracking-tight">efra</h1>
-            <p class="text-sm text-gray-500 font-light">portfolio</p>
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-medium mb-1 tracking-tight">efra</h1>
+                    <p class="text-sm text-gray-500 font-light">creative developer</p>
+                </div>
+                <nav class="flex items-center gap-6">
+                    <a href="https://github.com/efraeb" target="_blank" class="text-sm text-gray-500 hover:text-white transition-colors">
+                        GitHub
+                    </a>
+                    <a href="mailto:contact@efra.com" class="text-sm text-gray-500 hover:text-white transition-colors">
+                        Email
+                    </a>
+                    <a href="resume.pdf" download class="text-sm px-4 py-2 border border-white/20 rounded-md hover:bg-white hover:text-black transition-all">
+                        Resume
+                    </a>
+                </nav>
+            </div>
         </header>
 
         <!-- Main Layout -->
         <main class="flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
             <!-- Sidebar -->
             <nav class="border-r border-white/10 pr-8 fade-in">
-                <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-6">Projects</h2>
-                <ul id="projects" class="space-y-1">
-                    <!-- Projects loaded here -->
-                </ul>
+                <div class="sticky top-8">
+                    <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500 mb-6">Projects</h2>
+                    <ul id="projects" class="space-y-1">
+                        <!-- Projects loaded here -->
+                    </ul>
+                </div>
             </nav>
 
             <!-- Content -->
             <section class="fade-in">
                 <div id="content" class="max-w-3xl">
-                    <div class="text-gray-500 py-20 text-center font-light">
-                        Select a project to view details
+                    <!-- About Section (default) -->
+                    <div id="about-section">
+                        <h1 class="text-4xl font-semibold mb-4 tracking-tight">
+                            Hi, I'm Efra
+                        </h1>
+                        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                            A creative developer focused on building clean, functional, and beautiful web experiences.
+                            I enjoy working at the intersection of design and code.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">What I Do</h3>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-start">
+                                        <span class="text-white mr-2">→</span>
+                                        <span>Full-stack web development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-white mr-2">→</span>
+                                        <span>UI/UX design & prototyping</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-white mr-2">→</span>
+                                        <span>Design systems & component libraries</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Selected Work</h3>
+                                <p class="text-gray-400">
+                                    Select a project from the sidebar to learn more about my work.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer class="mt-20 pt-6 border-t border-white/10 text-center fade-in">
-            <p class="text-xs text-gray-500 font-light">built with markdown & vanilla js</p>
+        <footer class="mt-20 pt-6 border-t border-white/10 fade-in">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>© 2025 efra - built with markdown & vanilla js</p>
+                <div class="flex gap-6">
+                    <a href="https://github.com/efraeb" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="https://twitter.com/efra" target="_blank" class="hover:text-white transition-colors">Twitter</a>
+                    <a href="mailto:contact@efra.com" class="hover:text-white transition-colors">Email</a>
+                </div>
+            </div>
         </footer>
     </div>
 
