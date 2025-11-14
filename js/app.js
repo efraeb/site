@@ -1,5 +1,12 @@
 // Portfolio configuration
 const projects = [
+    // Profile sections
+    { id: 'about', name: 'About', file: 'about.md', year: 'Profile' },
+    { id: 'experience', name: 'Experience', file: 'experience.md', year: 'Career' },
+    { id: 'skills', name: 'Skills', file: 'skills.md', year: 'Expertise' },
+    { id: 'contact', name: 'Contact', file: 'contact.md', year: 'Connect' },
+
+    // Projects (you can replace these with your actual projects)
     { id: 'project-1', name: 'Project One', file: 'project-1.md', year: '2024' },
     { id: 'project-2', name: 'Project Two', file: 'project-2.md', year: '2024' },
     { id: 'sample', name: 'Sample Project', file: 'sample.md', year: '2024' }
