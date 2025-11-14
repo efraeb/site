@@ -1,33 +1,10 @@
 // Design work data
-// Add your images here with metadata
+// Add your images here - only image path and category are required
 
 const designWork = [
-    // Example entries - replace with your actual work
-    {
-        id: 1,
-        title: "Vista Rebrand",
-        category: "brand-identity",
-        image: "design/brand-identity/vista-rebrand.jpg",
-        year: "2024",
-        description: "Complete rebrand including logo, color system, and landing page"
-    },
-    {
-        id: 2,
-        title: "Ethereum Dominicana Poster",
-        category: "posters",
-        image: "design/posters/eth-dom-event.jpg",
-        year: "2024",
-        description: "Event poster for Ethereum Dominicana meetup"
-    },
-    {
-        id: 3,
-        title: "Operator Dashboard",
-        category: "ui-design",
-        image: "design/ui-design/operator-dashboard.png",
-        year: "2024",
-        description: "Dashboard interface for blockchain operators"
-    },
-    // Add more as you migrate from imgur
+    // Example: { category: "posters", image: "design/posters/image-name.jpg" },
+    // Add your images below:
+
 ];
 
 // Categories for filtering
