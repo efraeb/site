@@ -1,0 +1,242 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #151515;
+    --bg-tertiary: #1f1f1f;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --accent: #ffffff;
+    --border: #2a2a2a;
+}
+
+body {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    flex: 1;
+}
+
+/* Project List */
+.project-list {
+    border-right: 1px solid var(--border);
+    padding-right: 2rem;
+}
+
+.project-list h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+#projects {
+    list-style: none;
+}
+
+#projects li {
+    margin-bottom: 0.5rem;
+}
+
+#projects button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#projects button:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+#projects button.active {
+    background-color: var(--bg-secondary);
+    color: var(--accent);
+}
+
+/* Project Content */
+.project-content {
+    overflow-y: auto;
+}
+
+#content {
+    max-width: 800px;
+}
+
+.welcome {
+    color: var(--text-muted);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* Markdown Styles */
+#content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+#content h2 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+#content h3 {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+#content p {
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
+}
+
+#content ul, #content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 2rem;
+    color: var(--text-secondary);
+}
+
+#content li {
+    margin-bottom: 0.5rem;
+}
+
+#content a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+#content a:hover {
+    border-bottom-color: var(--accent);
+}
+
+#content code {
+    background-color: var(--bg-secondary);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+
+#content pre {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+}
+
+#content pre code {
+    background: none;
+    padding: 0;
+}
+
+#content blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 1rem;
+    margin: 1.25rem 0;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+#content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+#content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-list {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+}
