@@ -3,7 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep functionality */
+/* Scrollbar */
 body::-webkit-scrollbar {
     width: 4px;
 }
@@ -27,64 +27,73 @@ body::-webkit-scrollbar-thumb:hover {
     color: white;
 }
 
-/* Fade in on scroll */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Fade in on load */
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Project Card Styles */
-.project-card {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Project button styles */
+#projects button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 0.95rem;
     cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-.project-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+#projects button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateX(2px);
 }
 
-.project-card:hover .project-number {
-    transform: translateX(10px);
+#projects button.active {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
 }
 
-.project-card:hover .project-arrow {
-    opacity: 1;
-    transform: translateX(0);
+/* Content styles */
+#content {
+    animation: contentFadeIn 0.4s ease-out;
 }
 
-.project-number {
-    transition: transform 0.3s ease;
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.project-arrow {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Modal Styles */
-.modal-open {
-    overflow: hidden;
-}
-
-/* Markdown Content Styles */
-#modal-content h1 {
-    font-size: 3rem;
+/* Markdown styles */
+#content h1 {
+    font-size: 2.5rem;
     font-weight: 300;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    color: white;
 }
 
-#modal-content h2 {
+#content h2 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-top: 3rem;
@@ -92,7 +101,7 @@ body::-webkit-scrollbar-thumb:hover {
     color: rgba(255, 255, 255, 0.9);
 }
 
-#modal-content h3 {
+#content h3 {
     font-size: 1.2rem;
     font-weight: 400;
     margin-top: 2rem;
@@ -100,58 +109,58 @@ body::-webkit-scrollbar-thumb:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
-#modal-content p {
+#content p {
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.6);
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-#modal-content ul,
-#modal-content ol {
+#content ul,
+#content ol {
     margin-bottom: 1.5rem;
     padding-left: 2rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
-#modal-content li {
+#content li {
     margin-bottom: 0.5rem;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-#modal-content a {
+#content a {
     color: white;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: border-color 0.2s ease;
 }
 
-#modal-content a:hover {
+#content a:hover {
     border-bottom-color: white;
 }
 
-#modal-content code {
+#content code {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 0.9em;
     color: rgba(255, 255, 255, 0.9);
 }
 
-#modal-content pre {
+#content pre {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow-x: auto;
     margin-bottom: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#modal-content pre code {
+#content pre code {
     background: none;
     padding: 0;
 }
 
-#modal-content blockquote {
+#content blockquote {
     border-left: 2px solid rgba(255, 255, 255, 0.2);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
@@ -159,46 +168,27 @@ body::-webkit-scrollbar-thumb:hover {
     font-style: italic;
 }
 
-#modal-content hr {
+#content hr {
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin: 3rem 0;
 }
 
-#modal-content img {
+#content img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 6px;
     margin: 2rem 0;
 }
 
-/* Loading Animation */
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.4;
+/* Links hover effect */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #content h1 {
+        font-size: 2rem;
     }
-    50% {
-        opacity: 0.8;
-    }
-}
-
-.loading {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-/* Parallax Effect */
-.parallax {
-    transition: transform 0.1s ease-out;
-}
-
-/* Glass Effect */
-.glass {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Hover Glow */
-.hover-glow:hover {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>efra</title>
+    <title>efra - portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,99 +11,50 @@
                 extend: {
                     fontFamily: {
                         mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'monospace'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out forwards',
-                        'slide-up': 'slideUp 0.8s ease-out forwards',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                    },
+                    }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black text-white font-mono antialiased overflow-x-hidden">
+<body class="bg-black text-white font-mono antialiased">
 
     <!-- Custom Cursor -->
-    <div id="cursor" class="fixed w-4 h-4 border border-white/30 rounded-full pointer-events-none z-50 transition-all duration-200 ease-out hidden md:block"></div>
-    <div id="cursor-dot" class="fixed w-1 h-1 bg-white rounded-full pointer-events-none z-50 hidden md:block"></div>
+    <div id="cursor" class="fixed w-3 h-3 border border-white/20 rounded-full pointer-events-none z-50 transition-all duration-150 ease-out hidden md:block"></div>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/[0.02] rounded-full blur-3xl"></div>
-        </div>
+    <div class="container max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="mb-12 pb-6 border-b border-white/10 fade-in">
+            <h1 class="text-2xl font-light mb-1">efra</h1>
+            <p class="text-sm text-gray-600">portfolio</p>
+        </header>
 
-        <div class="text-center relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-7xl md:text-9xl font-light mb-6 tracking-tighter opacity-0 animate-fade-in" style="animation-delay: 0.2s">
-                efra
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-500 mb-12 opacity-0 animate-fade-in" style="animation-delay: 0.4s">
-                creative developer
-            </p>
-            <div class="opacity-0 animate-fade-in" style="animation-delay: 0.6s">
-                <a href="#projects" class="inline-block text-sm border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 group">
-                    view work
-                    <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </a>
-            </div>
-            <div class="absolute left-1/2 -translate-x-1/2 bottom-10 animate-float">
-                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
+        <!-- Main Layout -->
+        <main class="flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16">
+            <!-- Sidebar -->
+            <nav class="border-r border-white/10 pr-8 fade-in">
+                <h2 class="text-xs uppercase tracking-wider text-gray-600 mb-6">Projects</h2>
+                <ul id="projects" class="space-y-1">
+                    <!-- Projects loaded here -->
+                </ul>
+            </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="min-h-screen py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-sm uppercase tracking-widest text-gray-600 mb-20 fade-in-section">Selected Work</h2>
+            <!-- Content -->
+            <section class="fade-in">
+                <div id="content" class="max-w-3xl">
+                    <div class="text-gray-600 py-20 text-center">
+                        Select a project to view details
+                    </div>
+                </div>
+            </section>
+        </main>
 
-            <div id="projects-container" class="space-y-32">
-                <!-- Projects will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Detail Modal -->
-    <div id="modal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500">
-        <div class="min-h-screen flex items-center justify-center px-6 py-20">
-            <div class="max-w-4xl w-full relative">
-                <button id="close-modal" class="absolute top-0 right-0 text-gray-500 hover:text-white transition-colors p-2 text-2xl">
-                    ×
-                </button>
-                <div id="modal-content" class="prose-invert max-w-none"></div>
-            </div>
-        </div>
+        <!-- Footer -->
+        <footer class="mt-20 pt-6 border-t border-white/10 text-center fade-in">
+            <p class="text-xs text-gray-600">built with markdown & vanilla js</p>
+        </footer>
     </div>
-
-    <!-- Footer -->
-    <footer class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-sm text-gray-600">© 2025 efra</p>
-            <div class="flex gap-8 text-sm">
-                <a href="https://github.com/efraeb" target="_blank" class="text-gray-600 hover:text-white transition-colors">GitHub</a>
-                <a href="mailto:contact@efra.com" class="text-gray-600 hover:text-white transition-colors">Email</a>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/app.js"></script>
