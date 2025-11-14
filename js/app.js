@@ -219,44 +219,60 @@ const sections = {
     design: `
         <h1 class="text-4xl font-semibold mb-8 tracking-tight">design work</h1>
 
-        <p class="text-gray-400 mb-8 leading-relaxed">
+        <p class="text-gray-400 mb-6 leading-relaxed">
             a collection of brand identity, visual design, and creative work.
             everything from protocol rebrands to community visuals.
         </p>
 
-        <!-- Masonry Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <!-- Add your design images here -->
-            <!-- Example structure: -->
-            <div class="group relative overflow-hidden rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300">
-                <div class="aspect-square bg-white/5 flex items-center justify-center text-gray-600">
-                    <p class="text-sm">Add image</p>
-                </div>
-                <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-white text-sm">Project name</p>
-                </div>
-            </div>
-
-            <!-- Placeholder boxes - replace with actual images -->
-            <div class="aspect-[4/3] bg-white/5 rounded-lg border border-white/10"></div>
-            <div class="aspect-square bg-white/5 rounded-lg border border-white/10"></div>
-            <div class="aspect-[3/4] bg-white/5 rounded-lg border border-white/10"></div>
-            <div class="aspect-square bg-white/5 rounded-lg border border-white/10"></div>
-            <div class="aspect-[4/3] bg-white/5 rounded-lg border border-white/10"></div>
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 mb-8" id="category-filters">
+            <button class="category-filter active px-4 py-2 text-sm rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition-all" data-category="all">
+                All Work
+            </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="brand-identity">
+                Brand Identity
+            </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="posters">
+                Posters
+            </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="artwork">
+                Artwork
+            </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="ui-design">
+                UI Design
+            </button>
+            <button class="category-filter px-4 py-2 text-sm rounded-full border border-white/20 hover:bg-white/10 transition-all" data-category="misc">
+                Misc
+            </button>
         </div>
 
-        <div class="mt-12 p-6 border border-white/10 rounded-lg bg-white/5">
-            <h3 class="text-lg font-medium mb-3">How to add your design work</h3>
-            <ol class="space-y-2 text-gray-400 text-sm">
-                <li>1. Create a <code class="bg-white/10 px-2 py-1 rounded">design/</code> folder in your project</li>
-                <li>2. Add your images (PNG, JPG, etc.)</li>
-                <li>3. Update this section in <code class="bg-white/10 px-2 py-1 rounded">js/app.js</code> with image paths</li>
-                <li>4. Each image can link to imgur/behance or show full screen on click</li>
-            </ol>
-            <p class="mt-4 text-gray-500 text-sm">
-                Tip: Use a masonry layout library like <a href="https://masonry.desandro.com/" target="_blank" class="text-white border-b border-white/30 hover:border-white">Masonry</a>
-                for automatic layout, or keep it simple with CSS Grid (current approach).
+        <!-- Masonry Grid -->
+        <div id="design-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Images will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="mt-12 p-8 border border-white/10 rounded-lg bg-white/5 text-center">
+            <h3 class="text-lg font-medium mb-3">Add Your Design Work</h3>
+            <p class="text-gray-400 text-sm mb-4">
+                No images loaded yet. Follow these steps to migrate from imgur:
             </p>
+            <ol class="space-y-2 text-gray-400 text-sm text-left max-w-2xl mx-auto">
+                <li>1. Download images from <a href="https://imgur.com/a/cguulXy" target="_blank" class="text-white border-b border-white/30 hover:border-white">your imgur album</a></li>
+                <li>2. Organize them into <code class="bg-white/10 px-2 py-1 rounded">design/</code> category folders</li>
+                <li>3. Update <code class="bg-white/10 px-2 py-1 rounded">js/design-data.js</code> with image paths and metadata</li>
+                <li>4. See <code class="bg-white/10 px-2 py-1 rounded">design/README.md</code> for detailed instructions</li>
+            </ol>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-6" onclick="closeLightbox()">
+            <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-400 transition-colors">&times;</button>
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+            <div id="lightbox-info" class="absolute bottom-6 left-6 text-white">
+                <h3 id="lightbox-title" class="text-xl font-medium"></h3>
+                <p id="lightbox-desc" class="text-gray-400 text-sm mt-1"></p>
+            </div>
         </div>
     `
 };
@@ -290,6 +306,13 @@ function loadSection(sectionId) {
     document.querySelectorAll('#projects button').forEach(btn => {
         btn.classList.remove('active');
     });
+
+    // Special handling for design section
+    if (sectionId === 'design') {
+        setTimeout(() => {
+            initDesignWork();
+        }, 100);
+    }
 }
 
 // Initialize navigation
@@ -355,6 +378,108 @@ async function loadProject(project) {
         `;
     }
 }
+
+// Design Work Functions
+let currentCategory = 'all';
+
+function initDesignWork() {
+    // Check if designWork is defined
+    if (typeof designWork === 'undefined' || !designWork || designWork.length === 0) {
+        // Show empty state
+        document.getElementById('empty-state').style.display = 'block';
+        document.getElementById('design-grid').style.display = 'none';
+        return;
+    }
+
+    // Hide empty state
+    document.getElementById('empty-state').style.display = 'none';
+    document.getElementById('design-grid').style.display = 'grid';
+
+    // Init category filters
+    initCategoryFilters();
+
+    // Render all work initially
+    renderDesignWork('all');
+}
+
+function initCategoryFilters() {
+    const filters = document.querySelectorAll('.category-filter');
+    filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Update active state
+            filters.forEach(f => f.classList.remove('active', 'bg-white/10'));
+            filter.classList.add('active', 'bg-white/10');
+
+            // Filter work
+            const category = filter.dataset.category;
+            currentCategory = category;
+            renderDesignWork(category);
+        });
+    });
+}
+
+function renderDesignWork(category) {
+    const grid = document.getElementById('design-grid');
+    if (!grid) return;
+
+    // Filter by category
+    const filtered = category === 'all'
+        ? designWork
+        : designWork.filter(work => work.category === category);
+
+    // Clear grid
+    grid.innerHTML = '';
+
+    // Render each work
+    filtered.forEach(work => {
+        const card = document.createElement('div');
+        card.className = 'group relative overflow-hidden rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer';
+        card.onclick = () => openLightbox(work);
+
+        card.innerHTML = `
+            <img src="${work.image}" alt="${work.title}" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23111%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22%3EImage not found%3C/text%3E%3C/svg%3E'">
+            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                <p class="text-white font-medium">${work.title}</p>
+                <p class="text-gray-400 text-sm mt-1">${work.year}</p>
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+function openLightbox(work) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const title = document.getElementById('lightbox-title');
+    const desc = document.getElementById('lightbox-desc');
+
+    img.src = work.image;
+    img.alt = work.title;
+    title.textContent = work.title;
+    desc.textContent = work.description || work.year;
+
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && !lightbox.classList.contains('hidden')) {
+            closeLightbox();
+        }
+    }
+});
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
