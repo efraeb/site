@@ -26,9 +26,9 @@ const sections = {
             <div>
                 <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">background</h3>
                 <p class="text-gray-400 leading-relaxed">
-                    before vista, i was at <span class="text-white">llama</span> (acquired by river protocol) doing content & comms
-                    for DAOs like nouns, aave, and dydx. also co-founded
-                    <a href="https://ethereumdom.org" target="_blank" class="text-white border-b border-white/30 hover:border-white">ethereum dominicana</a>
+                    before Vista, i was at <span class="text-white">Llama</span> (acquired by River Protocol) doing content & comms
+                    for DAOs like Nouns, AAVE, and dYdX. also co-founded
+                    <a href="https://ethereumdom.org" target="_blank" class="text-white border-b border-white/30 hover:border-white">Ethereum Dominicana</a>
                     to get web3 going in the DR.
                 </p>
             </div>
@@ -166,6 +166,7 @@ const sections = {
                 <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-gray-300">Next.js</span>
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-gray-300">React</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-gray-300">Tailwind CSS</span>
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-gray-300">Git / GitHub</span>
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-gray-300">JavaScript</span>
                 </div>
@@ -212,6 +213,50 @@ const sections = {
                     philosophy, reverse engineering, mindfulness & internet culture.
                 </p>
             </div>
+        </div>
+    `,
+
+    design: `
+        <h1 class="text-4xl font-semibold mb-8 tracking-tight">design work</h1>
+
+        <p class="text-gray-400 mb-8 leading-relaxed">
+            a collection of brand identity, visual design, and creative work.
+            everything from protocol rebrands to community visuals.
+        </p>
+
+        <!-- Masonry Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Add your design images here -->
+            <!-- Example structure: -->
+            <div class="group relative overflow-hidden rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300">
+                <div class="aspect-square bg-white/5 flex items-center justify-center text-gray-600">
+                    <p class="text-sm">Add image</p>
+                </div>
+                <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-sm">Project name</p>
+                </div>
+            </div>
+
+            <!-- Placeholder boxes - replace with actual images -->
+            <div class="aspect-[4/3] bg-white/5 rounded-lg border border-white/10"></div>
+            <div class="aspect-square bg-white/5 rounded-lg border border-white/10"></div>
+            <div class="aspect-[3/4] bg-white/5 rounded-lg border border-white/10"></div>
+            <div class="aspect-square bg-white/5 rounded-lg border border-white/10"></div>
+            <div class="aspect-[4/3] bg-white/5 rounded-lg border border-white/10"></div>
+        </div>
+
+        <div class="mt-12 p-6 border border-white/10 rounded-lg bg-white/5">
+            <h3 class="text-lg font-medium mb-3">How to add your design work</h3>
+            <ol class="space-y-2 text-gray-400 text-sm">
+                <li>1. Create a <code class="bg-white/10 px-2 py-1 rounded">design/</code> folder in your project</li>
+                <li>2. Add your images (PNG, JPG, etc.)</li>
+                <li>3. Update this section in <code class="bg-white/10 px-2 py-1 rounded">js/app.js</code> with image paths</li>
+                <li>4. Each image can link to imgur/behance or show full screen on click</li>
+            </ol>
+            <p class="mt-4 text-gray-500 text-sm">
+                Tip: Use a masonry layout library like <a href="https://masonry.desandro.com/" target="_blank" class="text-white border-b border-white/30 hover:border-white">Masonry</a>
+                for automatic layout, or keep it simple with CSS Grid (current approach).
+            </p>
         </div>
     `
 };
@@ -315,7 +360,7 @@ async function loadProject(project) {
 document.addEventListener('keydown', (e) => {
     // Navigate between sections
     if (!currentProject && currentSection) {
-        const sectionKeys = ['about', 'experience', 'skills'];
+        const sectionKeys = ['about', 'experience', 'skills', 'design'];
         const currentIndex = sectionKeys.indexOf(currentSection);
 
         if (e.key === 'ArrowUp' && currentIndex > 0) {
