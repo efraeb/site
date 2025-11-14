@@ -269,9 +269,9 @@ const sections = {
         </div>
 
         <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-6" onclick="closeLightbox()">
-            <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-400 transition-colors">&times;</button>
-            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+        <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-6">
+            <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-400 transition-colors" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" onclick="event.stopPropagation()">
         </div>
     `
 };
@@ -396,6 +396,16 @@ function initDesignWork() {
 
     // Init category filters
     initCategoryFilters();
+
+    // Init lightbox close on background click
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
 
     // Render all work initially
     renderDesignWork('all');
