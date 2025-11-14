@@ -1,29 +1,11 @@
 # Skills & Interests
 
-## Technical Skills
+## Skills
 
-**Product & Strategy**
-Product strategy · Protocol research · Community management · Client communication · Brand development · Content planning · Problem solving
-
-**Development & Analytics**
-SQL/DuneSQL · Dune Analytics · Next.js · Git/GitHub · Blockchain explorers
-
-**Design & Creative**
-Adobe Creative Cloud · Figma · Notion · Copywriting · Audio engineering · Video editing · Photography
-
-**Other**
-Bilingual (Spanish/English)
+product strategy, protocol research, community management, client communication, brand development, content planning, copywriting, problem solving, SQL/DuneSQL, Dune Analytics, Next.js, Git/GitHub, Adobe CC, Figma, Notion, Google Sheets, blockchain explorers, audio engineering, video editing, photography, bilingual (Spanish/English)
 
 ---
 
 ## Interests
 
-Beyond work, I explore:
-
-- Thriller movies & videogames
-- Vintage fashion
-- Music production
-- Design systems
-- Philosophy
-- Reverse engineering
-- Mindfulness & internet culture
+Thriller movies, videogames, vintage fashion, music production, design systems, philosophy, reverse engineering, mindfulness & internet culture
