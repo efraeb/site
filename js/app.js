@@ -9,52 +9,8 @@ let currentProject = null;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    initCursor();
     loadProjectList();
 });
-
-// Custom Cursor
-function initCursor() {
-    const cursor = document.getElementById('cursor');
-    if (!cursor) return;
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    function animate() {
-        const delay = 0.15;
-        cursorX += (mouseX - cursorX) * delay;
-        cursorY += (mouseY - cursorY) * delay;
-
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    // Cursor hover effects
-    document.addEventListener('mouseover', (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.borderColor = 'rgba(255, 255, 255, 0.5)';
-        }
-    });
-
-    document.addEventListener('mouseout', (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-        }
-    });
-}
 
 // Load project list
 function loadProjectList() {
