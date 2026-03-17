@@ -267,12 +267,6 @@ const sections = {
                 <li>4. See <code class="bg-white/10 px-2 py-1 rounded">design/README.md</code> for detailed instructions</li>
             </ol>
         </div>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-6">
-            <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-400 transition-colors" onclick="closeLightbox()">&times;</button>
-            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" onclick="event.stopPropagation()">
-        </div>
     `
 };
 
